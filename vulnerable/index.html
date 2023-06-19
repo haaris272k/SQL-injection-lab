@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Vulnerable Application</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f1f5f8;
+            color: #333;
+        }
+
+        h1 {
+            color: #325d88;
+            margin-top: 0;
+        }
+
+        p {
+            margin-bottom: 10px;
+        }
+
+        .success-message {
+            color: #0066cc;
+            font-weight: bold;
+        }
+
+        .vulnerability-description {
+            margin-top: 20px;
+        }
+
+        .code-comparison {
+            margin-top: 30px;
+            border: 1px solid #c4d2e0;
+            padding: 10px;
+            background-color: #f1f5f8;
+        }
+
+        .code-title {
+            color: #325d88;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .code-snippet {
+            margin-top: 10px;
+            background-color: #e8f0f5;
+            padding: 5px;
+            border: 1px solid #c4d2e0;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <h1>Login Successful!</h1>
+    <p class="vulnerability-description">Congratulations, you have successfully logged in! The applicaton is vulnerable to SQL injection attack.</p>
+    <p class="vulnerability-description">One can easily login to the applicaton by exploiting SQL injection vulnerability in the login fields. (Great if u did that &#128515)</p>
+
+    <div class="code-comparison">
+        <h2 class="code-title">Code Comparison</h2>
+        <div class="code-snippet">
+            <h3>Vulnerable Code:</h3>
+            <p>The following code snippet contains the vulnerable code:</p>
+            <pre><code>query = "SELECT * FROM {table_name} WHERE username = '{username}' AND password = '{password}'"</code></pre>
+            <p><em>Note: The vulnerable code uses string formatting to directly include the values of 'username' and 'password' into the SQL query, making it susceptible to SQL injection attacks.</em></p>
+        </div>
+        <div class="code-snippet">
+            <h3>Updated Code:</h3>
+            <p>The following code snippet shows the updated code:</p>
+            <pre><code>query = "SELECT * FROM {table_name} WHERE username = %s AND password = %s"</code></pre>
+            <pre><code>cursor.execute(query, (username, password))</code></pre>
+            <p><em>Note: The updated code uses parameterized queries, where the values of 'username' and 'password' are passed as parameters to prevent SQL injection vulnerabilities.</em></p>
+        </div>
+    </div>
+</body>
+</html>

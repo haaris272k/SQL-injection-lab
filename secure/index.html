@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Secure Application</title>
+    <style>
+        /* CSS styles for the web page */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f5f9;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 800px;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #3273dc;
+            margin-top: 0;
+        }
+
+        .message {
+            text-align: center;
+            color: #3273dc;
+            margin-top: 30px;
+            line-height: 1.5;
+            width: 80%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .message p:last-child {
+            margin-bottom: 0;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #3273dc;
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #265da3;
+        }
+
+        #messageBox {
+            font-weight: bold;
+            margin-top: 20px;
+            opacity: 0;
+            transform: scale(0.8);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+
+        .celebrate {
+            animation-name: celebrateAnimation;
+            animation-duration: 2s;
+            animation-timing-function: ease-out;
+        }
+
+        @keyframes celebrateAnimation {
+            0% { transform: scale(0.8); opacity: 0; }
+            50% { transform: scale(1.2); opacity: 1; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+    </style>
+    <script>
+        function showMessage() {
+            var messageBox = document.getElementById("messageBox");
+            messageBox.style.display = "block";
+            messageBox.classList.add("celebrate");
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Testing Lab</h1>
+
+        <div class="message">
+            <p>Congratulations! You have successfully logged in to the application.</p>
+            <p>The secure code implementation in the application could prevent sql injection attack.</p>
+            <p>The devloper's commitment to developing secure code allows to mitigate potential attacks and protect the data.</p>
+            <p>You can refer to the source code to get an idea of the implementation of the best practices to secure coding.</p>
+            <button class="btn" onclick="showMessage()">Click Me</button>
+            <p id="messageBox" style="display: none;">Hurray! You learned a security lesson.</p>
+        </div>
+    </div>
+</body>
+</html>
