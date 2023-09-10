@@ -1,7 +1,6 @@
 # SQL Injection Lab
 
 ![SQL Injection](https://img.shields.io/badge/SQL-Injection-red.svg)
-[![Downloads](https://pepy.tech/badge/yourpackage)](https://pepy.tech/project/yourpackage)
 
 ## Table of Contents
 - [Introduction](#introduction)
