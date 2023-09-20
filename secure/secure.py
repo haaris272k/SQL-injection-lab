@@ -236,10 +236,7 @@ def app():
 
         if login(username, password):
             print("\n\033[92mLogin Successful!\033[0m")
-
-            # Open the dashboard.html file using the default browser
-            file_path = os.path.join(os.getcwd(), "secure/index.html")
-            os.system(f"open {file_path}")  # For Mac
+            subprocess.run(["open", "secure/index.html"])
         else:
             print("\n\033[91mInvalid credentials\033[0m")
 
